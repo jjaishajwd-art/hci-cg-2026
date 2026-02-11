@@ -1,66 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Character encoding for consistent rendering -->
-  <meta charset="UTF-8">
-
-  <!-- Page title shown in browser tab and announced by screen readers -->
-  <title>Interaction Analysis – Norman vs. GOMS</title>
-
-  <style>
-    /* Minimal styling (Lab 01 allowed): highlight rows where Norman and GOMS directly correspond */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Interaction Analysis – Norman vs. GOMS</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
     .norman-goms-match {
-      background-color: #fff3cd; /* warm, subtle amber */
+      background-color: rgb(148, 94, 94);
     }
   </style>
 </head>
-<body>
-
-  <!-- Page header: identifies topic and context -->
-  <header>
-    <h1>Interaction Analysis</h1>
-    <p>Norman (1988) vs. GOMS (1983): Enable Wi-Fi (iPhone 13 / Samsung S25)</p>
-  </header>
-
-  <!-- Primary navigation: consistent across all site pages -->
-  <nav aria-label="Primary navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="contact.html">Contact</a></li>
-
-      <!-- Current page indicated for screen reader orientation -->
-      <li><a href="analysis.html" aria-current="page">Interaction Analysis</a></li>
-      <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
-      <li><a href="assignment01.html">Lab 01 Rules</a></li>
+<body class="background">
+    <header>
+    <nav class="navbar"> 
+        <ul>
+<li> <a href="file:///D:/Jaisha/5sem/lab01/index.html" target="_parent"> Home</a></li>
+         <li> <a href="file:///D:/Jaisha/5sem/index.html" target="_parent"> CV</a></li>
+         <li> <a href="file:///D:/Jaisha/5sem/index.html" target="_parent"> Contact</a></li>
+         <li> <a href="file:///D:/Jaisha/5sem/lab01/analysis.html" target="_parent" aria-current="page"> Interaction Analysis</a></li>
+         <li> <a href="file:///D:/Jaisha/5sem/lab01/NorGOMSKlm.html" target="_parent"> Norman-GOMS-KLM</a></li>
+         <li> <a href="file:///D:/Jaisha/5sem/index.html" target="_parent"> Lab 01 Rules</a></li>
     </ul>
-  </nav>
-
-  <!-- Main landmark: unique content of this page -->
+</nav>
+    <h1>-Interaction Analysis</h1>
+  </header>
   <main>
-
-    <section>
-      <h2>Norman vs. GOMS Comparison Table</h2>
-
-      <!-- Data table: caption + thead/tbody support accessibility -->
-      <table border="1">
+    <section><center><u><h2>Norman vs. GOMS Comparison Table</h2></u></center>
+    <table style="font-size: 20px;"border="4">
         <caption>
           Comparison of Norman’s stages and GOMS concepts using the Wi-Fi toggle example
         </caption>
-
         <thead>
-          <tr>
+            <tr>
             <th scope="col">Norman’s Stage</th>
             <th scope="col">Real-World Example (iPhone 13 / Samsung S25)</th>
             <th scope="col">GOMS Interpretation &amp; Rationale<br>GOMS 1983 vs. Norman’s 1988</th>
             <th scope="col">Alignment Analysis</th>
-          </tr>
+            </tr>
         </thead>
-
         <tbody>
-          <!-- Highlighted rows indicate direct Norman ↔ GOMS correspondence -->
-          <tr class="norman-goms-match">
-            <th scope="row">
+            <tr class="norman-goms-match">
+                <th scope="row">
               Goal ↔ GOAL<br>
               (User intention)
             </th>
@@ -76,10 +57,9 @@
               ✅ <strong>Perfect Match</strong><br>
               Direct correspondence between models.
             </td>
-          </tr>
-
-          <tr class="norman-goms-match">
-            <th scope="row">
+            </tr>
+            <tr class="norman-goms-match">
+                <th scope="row">
               Plan ↔ METHOD &amp; Selection Rules<br><br>
               Mental state before action or High level of intention<br><br>
               Cognitive decision state before execution
@@ -112,10 +92,10 @@
 
               🟡 <strong>Contextual Alignment</strong> — Handled implicitly in Norman; explicit but optional in GOMS.
             </td>
-          </tr>
+            </tr>
 
-          <tr>
-            <th scope="row">Specify</th>
+            <tr >
+                <th scope="row">Specify</th>
             <td>
               Visual search &amp; targeting:<br><br>
               User locates (finds) the fan-shaped Wi-Fi icon among other toggles.<br><br>
@@ -132,10 +112,10 @@
               GOMS abstracts this cognitive work away rather than modeling it explicitly,<br>
               OR as part of a mental operator [M] in Execute/Operator.
             </td>
-          </tr>
+            </tr>
 
-          <tr class="norman-goms-match">
-            <th scope="row">Execute ↔ OPERATOR</th>
+            <tr class="norman-goms-match">
+                <th scope="row">Execute ↔ OPERATOR</th>
             <td>
               Physical Action: Finger taps the Wi-Fi toggle.<br>
               • Touchscreen tap duration: ~0.2 seconds (KLM: [K] or [B]).
@@ -153,10 +133,10 @@
               ✅ <strong>Direct Match</strong><br>
               This is the empirical core both models acknowledge.
             </td>
-          </tr>
+            </tr>
 
-          <tr>
-            <th scope="row">Perceive / Interpret / Evaluate</th>
+            <tr>
+                 <th scope="row">Perceive / Interpret / Evaluate</th>
             <td>
               Feedback Loop:<br>
               1. Perceive: Toggle color changes (grey → blue).<br>
@@ -172,25 +152,24 @@
               <strong>Fundamental Divergence</strong><br><br>
               This is the heart of Norman’s model (closing the Gulf of Evaluation) and is entirely outside GOMS’s scope.
             </td>
-          </tr>
+            </tr>
         </tbody>
-      </table>
+    </table>
+</section>
 
-    </section>
-
-    <section>
-      <h2>Quick Note</h2>
+<section>
+      <u><h2>Quick Note</h2></u>
       <p>
         This page is included as a conceptual reference for Lab 01. Students should focus on writing clean,
         semantic HTML and be able to explain how their structure supports usability and accessibility.
       </p>
     </section>
-
   </main>
 
-  <!-- Footer: supplementary navigation -->
-  <footer>
-    <p><a href="index.html">Back to Home</a></p>
+<footer>
+   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+   🏠&nbsp;<a href="file:///D:/Jaisha/5sem/lab01/index.html">Back to Home</a>
   </footer>
 
 </body>

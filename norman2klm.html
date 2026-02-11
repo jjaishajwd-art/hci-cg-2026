@@ -1,99 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Norman vs. GOMS vs. KLM – Cognitive Models</title>
-
-  <style>
-    /* Minimal styling allowed in Lab 01: color only */
-    .row-norman { background-color: #fff3cd; } /* warm amber */
-    .row-goms   { background-color: #e7f3ff; } /* light blue */
-    .row-klm    { background-color: #e9f7ef; } /* light green */
-
-    .key-takeaway {
-      background-color: #fff3cd;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norman vs. GOMS vs. KLM – Cognitive Models</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .key-takeaway {
+      background-color: rgb(236, 183, 192);;
       padding: 0.5em;
     }
-  </style>
+    </style>
 </head>
-<body>
-
-  <!-- Page header -->
-  <header>
-    <h1>Norman vs. GOMS vs. KLM</h1>
-    <p>Model-based evaluation and cognitive models (Dix et al., Chapter 12)</p>
-  </header>
-
-  <!-- Primary navigation -->
-  <nav aria-label="Primary navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="analysis.html">Interaction Analysis</a></li>
-      <li><a href="norman2klm.html" aria-current="page">Norman–GOMS–KLM</a></li>
-      <li><a href="assignment01.html">Lab 01 Rules</a></li>
-
+    <body class="background">
+<header>
+    <nav class="navbar"> 
+        <ul>
+<li> <a href="file:///D:/Jaisha/5sem/lab01/index.html" target="_parent"> Home</a></li>
+         <li> <a href="file:///D:/Jaisha/5sem/index.html" target="_parent"> CV</a></li>
+         <li> <a href="file:///D:/Jaisha/5sem/index.html" target="_parent"> Contact</a></li>
+         <li> <a href="file:///D:/Jaisha/5sem/lab01/analysis.html" target="_parent"> Interaction Analysis</a></li>
+         <li> <a href="file:///D:/Jaisha/5sem/lab01/NorGOMSKlm.html" target="_parent" aria-current="page"> Norman-GOMS-KLM</a></li>
+         <li> <a href="file:///D:/Jaisha/5sem/index.html" target="_parent"> Lab 01 Rules</a></li>
     </ul>
-  </nav>
+</nav>
+<center><u><h1>Norman Vs GOMS Vs KLM</h1></u></center>
+<p style="font-size: 18px;">Model-based evaluation and cognitive models (Dix et al., Chapter 12)</p>
+</header>
+<main>
+    <section style="font-size: 20px;">
+        <i><h2>Cognitive Models of User Interaction</h2></i>
+        <p>This side discusses different techniques and models that represent users while they interact with an interface. These models focus on various aspects of user behavior such as understanding, knowledge, intentions, and actions, ranging from high-level goal planning to low-level physical activities like keystrokes and mouse clicks. Most of these models are developed by psychologists and computer scientists to better understand user behavior.
 
-  <!-- Main content -->
-  <main>
+<br>The models can be classified into competence models and performance models.<strong>Competence models </strong>describe what actions are possible for a user but do not consider whether users can realistically perform them. <strong> Performance models</strong>, on the other hand, explain how tasks are actually carried out by users, including what they need to know and how they apply that knowledge during task execution.
 
-    <!-- Comparison section -->
-    <section>
-      <h2>Clean Comparison (Class &amp; Exam Reference)</h2>
+Another classification distinguishes between models that focus on planning activities and those that focus on executing actions.<br><br>
+Based on this, the section groups cognitive models into three categories: 
+<ol type="i">
+    <li>models of task and goal hierarchies</li>
+    <li>linguistic and grammatical models</li>
+    <li>physical or device-level models</li>
+</ol>
+<br>
+The <b>first</b> category deals directly with the issue of formulation of goals and tasks.
+The <b>second</b> deals with the grammar of the articulation translation and how it is
+understood by the user. The <b>third</b> category again deals with articulation, but at the
+human motor level instead of at a higher level of human understanding.
+Architectural assumptions about the user are needed in any of the cognitive models
+discussed here. Some of the more basic architectural assumptions, such as the distinction between long- and short-term memory.<br/> After discussing models in the three categories above, we will describe two additional cognitive
+architectures and how they are relevant for analyzing interactive system design.
+Furthermore, the similarity between the language describing the user and that
+describing the computer has some advantages and some dangers. On the positive
+side it makes communication and analysis of the combined human–computer system easier. For instance, cognitive complexity theory (described later) produces
+models of both user goals and the system grammar, and can reason about their interaction. On the other hand, there is a danger that this will encourage a mechanistic
+view of the user.
+</p>
+</div>
 
-      <table border="1">
-        <caption>
-          Model-based evaluation: what each model explains vs. predicts
-        </caption>
+<i><h2>GOAL AND TASK HIERARCHIES</h2></i>
 
-        <thead>
-          <tr>
-            <th scope="col">Model</th>
-            <th scope="col">Category</th>
-            <th scope="col">What it Explains</th>
-            <th scope="col">What it Predicts</th>
-          </tr>
-        </thead>
+<p>
+    Many cognitive models (like GOMS and CCT) use a hierarchical goal-subgoal structure where complex tasks are broken down into smaller, manageable subgoals—a divide-and-conquer approach. Other models (like TAG) and task analysis techniques also use this approach.
+    Example: Producing a report on sales of introductory HCI textbooks:
+    <ul>
+  <li>Produce report
+    <ul>
+      <li>Gather data
+        <ul>
+          <li>Find book names
+            <ul>
+              <li>Search names database using keywords</li>
+              <li>Manually sift through names and abstracts</li>
+            </ul>
+          </li>
+          <li>Search sales database</li>
+        </ul>
+      </li>
+      <li>Layout tables and histograms</li>
+      <li>Write description</li>
+    </ul>
+  </li>
+</ul>
+Each subgoal can be further broken down until a sufficient level of detail is reached.
+<strong><h3>Key Issues in Hierarchical Task Analysis:</h3></strong>
+<u>Granularity</u>: Where to stop decomposing tasks (individual actions like hand/eye movements vs. abstract tasks) and where to start analysis (high-level goal vs. specific subgoals)-
+The choice depends on design needs.
+<u>Unit Task:</u> The most abstract routine task that a user can perform without problem-solving while users don’t need problem-solving skills, designers may need sophisticated skills to define them.
+<u>Multiple Solutions & Interaction:</u> Users may have several ways to achieve a goal; models must account for choice between solutions.
+<u>Error Handling:</u> Real users make errors.Hierarchical models mainly predict “perfect user” behavior-prediction of errors is generally poor.
 
-        <tbody>
-          <tr class="row-norman">
-            <th scope="row">Norman</th>
-            <td>Cognitive / descriptive</td>
-            <td>Understanding, errors, feedback, gulfs</td>
-            <td>❌ Nothing (no performance prediction)</td>
-          </tr>
+</p>
 
-          <tr class="row-goms">
-            <th scope="row">GOMS</th>
-            <td>Predictive / analytic</td>
-            <td>Task structure for expert users</td>
-            <td>✔ Relative efficiency</td>
-          </tr>
+<h2>Lets talk about <i>GOMS</i> model</h2>
+<p>
+    The GOMS model of Card, Moran and Newell is an acronym for Goals, Operators,Methods and Selection. A GOMS description consists of these four elements:
+    <h3>Goals:</h3> These are the user’s goals, describing what the user wants to achieve.
+Further, in GOMS the goals are taken to represent a ‘memory point’ for the user,
+from which he can evaluate what should be done and to which he may return
+should any errors occur.
+<h3>Operators:</h3> These are the lowest level of analysis. They are the basic actions that
+the user must perform in order to use the system. They may affect the system
+(for example, press the ‘X’ key) or only the user’s mental state (for example, read
+the dialog box). There is still a degree of flexibility about the granularity of
+operators; we may take the command level ‘issue the SELECT command’ or be
+more primitive: ‘move mouse to menu bar, press center mouse button . . .’.
+<h3>Methods:</h3> As we have already noted, there are typically several ways in which a goal
+can be split into subgoals. For instance, in a certain window manager a currently
+selected window can be closed to an icon either by selecting the ‘CLOSE’ option
+from a pop-up menu, or by hitting the ‘L7’ function key. In GOMS these two goal
+decompositions are referred to as methods, so we have the CLOSE-METHOD and
+the L7-METHOD:
+<br>
+<br>
+<center><img src="Capture.JPG" title="L7 METHOD " alt="This image is not available"/></center>
+<h3>Selection:</h3>
+The dots are used to indicate the hierarchical level of goals.
+From the above snippet we see the use of the word select where the
+choice of methods arises. GOMS does not leave this as a random choice, but
+attempts to predict which methods will be used. This typically depends both on
+the particular user and on the state of the system and details about the goals.
+For instance, a user, Sam, never uses the L7-METHOD, except for one game,
+‘blocks’, where the mouse needs to be used in the game until the very moment
+the key is pressed. GOMS captures this in a selection rule for Sam:
+User Sam:<br>
+Rule 1: Use the CLOSE-METHOD unless another rule applies.<br>
+Rule 2: If the application is ‘blocks’ use the L7-METHOD.
 
-          <tr class="row-klm">
-            <th scope="row">KLM</th>
-            <td>Predictive / quantitative</td>
-            <td>Low-level physical and motor actions</td>
-            <td>✔ Execution time</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+<u><h3>Performance Analysis using GOMS</h3></u>
+Using GOMS, we can estimate the following:
+<ul>
+    <li>Short-term memory load (based on the depth of the goal hierarchy)</li>
+    <li>User commands prediction</li>
+    <li>Task completion time</li>
+  </ul>
 
-    <!-- KLM operators -->
-    <section>
-      <h2>KLM Operators (Execution-Level Primitives)</h2>
+  <h4>Research results:</h4>
+  <ul>
+    <li>~90% accuracy in predicting user commands</li>
+    <li>Time prediction has ~33% error (assuming each operator takes a fixed time)</li>
+    <li>The model is idealized, not exactly like a real human</li>
+  </ul>
 
-      <p>
-        The Keystroke-Level Model (KLM) decomposes the <strong>execution phase</strong>
-        of interaction into a small set of primitive operators. KLM assumes the user
-        is expert and that the method has already been chosen.
-      </p>
+  <u><h3>Strengths and Limitations</h3></u>
+  <h4>Strengths</h4>
+  <ul>
+    <li>Accurately describes routine tasks performed by expert users</li>
+    <li>Can predict execution time</li>
+    <li>Can be combined with physical device models</li>
+  </ul>
 
-      <table border="1">
+  <h4>Limitations</h4>
+  <ul>
+    <li>Does not deeply model the user’s knowledge</li>
+    <li>Cannot predict training time or skill transfer</li>
+    <li>Not suitable for beginners or creative tasks</li>
+  </ul>
+</p>
+<br>
+<br>
+<center><img src="Capture2.JPG" title="interesting info" alt="This image is not available"/></center>
+<hr>
+</p>
+<i><h2> Keystroke-level model (PHYSICAL AND DEVICE MODELS)</h2></i>
+<p>
+Compared with the deep cognitive understanding required to describe problemsolving activities, the human motor system is well understood. KLM (Keystroke-Level
+Model) uses this understanding as a basis for detailed predictions about user
+performance. It is aimed at unit tasks within interaction – the execution of simple
+command sequences, typically taking no more than 20 seconds. Examples of this
+would be using a search and replace feature, or changing the font of a word. It does
+not extend to complex actions such as producing a diagram. The assumption is that
+these more complex tasks would be split into subtasks (as in GOMS) before the user
+attempts to map them into physical actions. The task is split into two phases:
+acquisition of the task, when the user builds a mental representation of the task;
+execution of the task using the system’s facilities.
+KLM only gives predictions for the latter stage of activity. During the acquisition
+phase, the user will have decided how to accomplish the task using the primitives of
+the system, and thus, during the execution phase, there is no high-level mental activity – the user is effectively expert. KLM is related to the GOMS model, and can be
+thought of as a very low-level GOMS model where the method is given.
+The model decomposes the execution phase into five different physical motor
+operators, a mental operator and a system response operator:
+<br><br>
+K Keystroking, actually striking keys, including shifts and other modifier keys.<br>
+B Pressing a mouse button.<br>
+P Pointing, moving the mouse (or similar device) at a target.<br>
+H Homing, switching the hand between mouse and keyboard.<br>
+D Drawing lines using the mouse.<br>
+M Mentally preparing for a physical action.<br>
+R System response which may be ignored if the user does not have to wait for it, as
+in copy typing.<br>
+The execution of a task will involve interleaved occurrences of the various operators.
+<h3><u>For Example:</u></h3>
+Imagine we are using a mouse-based editor. If we notice a single
+character error we will point at the error, delete the character and retype it, and then
+return to our previous typing point. This is decomposed as follows:
+<ol>
+  <li>Move hand to mouse  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; <strong>H[mouse]</strong></li>
+  <li>Position mouse after bad character  &emsp; <strong>PB[LEFT]</strong></li>
+  <li>Return to keyboard  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <strong>H[keyboard]</strong></li>
+  <li>Delete character  &emsp;&emsp;&emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp; <strong>MK[DELETE]</strong></li>
+  <li>Type correction  &emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&emsp; <strong>K[char]</strong></li>
+  <li>Reposition insertion point &emsp;&nbsp;&emsp;&emsp;&emsp;&nbsp;<strong>H[mouse]MPB[LEFT]</strong></li>
+</ol>
+Notice that some operators have descriptions added to them, representing which
+device the hand homes to (for example, [mouse]) and what keys are hit (for example,
+LEFT – the left mouse button).<br>
+The model predicts the total time taken during the execution phase by adding the
+component times for each of the above activities. For example, if the time taken for
+one keystroke is tK, then the total time doing keystrokes is
+TK = 2tK<br>
+Similar calculations for the rest of the operators give a total time of
+Texecute = TK + TB + TP + TH + TD + TM + TR<br>
+= 2tK + 2tB + tP + 3tH + 0 + 2tM + 0<br>
+In this example, the system response time was zero. However, if the user had to
+wait for the system then the appropriate time would be added. In many typing tasks,
+the user can type ahead anyway and thus there is no need to add response times.
+Where needed, the response time can be measured by observing the system.<br>
+The times for the other operators are obtained from empirical data. The keying
+time obviously depends on the typing skill of the user, and different times are thus
+used for different users. Pressing a mouse button is usually quicker than typing
+(especially for two-finger typists), and a more accurate time prediction can be made
+by separating out the button presses B from the rest of the keystrokes K. The pointing time can be calculated using Fitts’ law (see Chapter 1), and thus depends on the
+size and position of the target.1 Alternatively, a fixed time based on average within screen pointing can be used. Drawing time depends on the number and length of the
+lines drawn, and is fairly domain specific, but one can easily use empirical data for
+more general drawing tasks. Finally, homing time and mental preparation time are
+assumed constant. <br>Typical times are summarized in Table 12.1.
+The mental operator is probably the most complex part of KLM. Remember that
+the user is assumed to have decided what to do, and how to do it. The mental preparation is thus just the slight pauses made as the user recalls what to do next.
+There are complicated heuristics for deciding where to put M operators, but they all
+boil down to the level of chunking (see Chapter 1 for a discussion of chunking).
+If the user types a word, or a well-known command name, this will be one chunk,
+and hence only require one mental operator. However, if a command name was an
+acronym which the user was recalling letter by letter, then we would place one M
+operator per letter.<br>
+The physical operator times all depend on the skills of the user. Also, the mental
+operator depends on the level of chunking, and hence the expertise of the user. You
+must therefore decide before using KLM predictions just what sort of user you are
+thinking about. You cannot even work out the operators and then fill in the times
+later, as different users may choose different methods and have different placings of
+M operators due to chunking. This sounds rather onerous, but the predictions made
+by KLM are only meant to be an approximation, and thus reasonable guesses about
+levels of expertise are enough.<br>
+Individual predictions may be interesting, but the power of KLM lies in comparison. Given several systems, we can work out the methods to perform key tasks, and
+then use KLM to tell us which system is fastest. This is considerably cheaper than conducting lengthy experiments.
+"Furthermore, the systems need not even exist.<br>
+From a description of a proposed system, we can predict the times taken for tasks.
+As well as comparing systems, we can compare methods within a system. This can be
+useful in preparing training materials, as we can choose to teach the faster methods."
+<br><br>
+<center><table border="1" >
         <caption>
           KLM operators (Dix et al., Chapter 12 – Cognitive Models / Physical &amp; Device Models)
         </caption>
@@ -158,47 +312,15 @@
           </tr>
         </tbody>
       </table>
-    </section>
+    </center>
 
-    <!-- Worked example -->
-    <section>
-      <h2>Worked Example: Correcting a Single Character</h2>
-
-      <p>
-        Example task: the user notices a single-character error in a mouse-based
-        editor, deletes it, retypes it, and returns to the insertion point.
-      </p>
-
-      <ol>
-        <li>Move hand to mouse</li>
-        <li>Position mouse after bad character</li>
-        <li>Return to keyboard</li>
-        <li>Delete character</li>
-        <li>Type correction</li>
-        <li>Reposition insertion point</li>
-      </ol>
-
-      <p>One possible KLM operator sequence:</p>
-
-      <pre>
-H[mouse]
-P B[LEFT]
-H[keyboard]
-M K[DELETE]
-K[char]
-H[mouse] M P B[LEFT]
-      </pre>
-
-      <p>
-        This sequence illustrates how KLM models only execution-level actions.
-        High-level planning, learning, and interpretation are not represented.
-      </p>
-    </section>
-
-    <!-- Key takeaways -->
-    <section>
-      <h2>Key Takeaways</h2>
-
+<br><br>
+<center><img src="Capture3.JPG" title="12.1" alt="This imageis not available"/></center>
+<br><br>
+<center><img src="Capture4.JPG" title="interesting info" alt="This image is not available"/></center>
+</p>
+<section>
+      
       <blockquote class="key-takeaway">
         <p>
           <strong>
@@ -218,13 +340,123 @@ H[mouse] M P B[LEFT]
         </p>
       </blockquote>
     </section>
+<hr>
+<i><h2>Norman’s Model of Interaction</h2></i>
+<p>
+It is the most influential in Human–Computer
+Interaction, possibly because of its closeness to our intuitive understanding of the
+interaction between human user and computer. The user formulates a plan of
+action, which is then executed at the computer interface. When the plan, or part of
+the plan, has been executed, the user observes the computer interface to evaluate the
+result of the executed plan, and to determine further actions.
+The interactive cycle can be divided into two major phases: execution and evaluation. These can then be subdivided into further stages, seven in all. The stages in
+Norman’s model of interaction are as follows:
+<ol>
+  <li>Establishing the goal.</li>
+  <li>Forming the intention.</li>
+  <li>Specifying the action sequence.</li>
+  <li>Executing the action.</li>
+  <li>Perceiving the system state.</li>
+  <li>Interpreting the system state.</li>
+  <li>Evaluating the system state with respect to the goals and intentions.</li>
+</ol>
+Each stage is, of course, an activity of the user. First the user forms a goal. This is the
+user’s notion of what needs to be done and is framed in terms of the domain, in the
+task language. It is liable to be imprecise and therefore needs to be translated into
+the more specific intention, and the actual actions that will reach the goal, before
+it can be executed by the user. The user perceives the new state of the system, after
+execution of the action sequence, and interprets it in terms of his expectations. If the
+system state reflects the user’s goal then the computer has done what he wanted and
+the interaction has been successful; otherwise the user must formulate a new goal
+and repeat the cycle.
+Norman uses a simple example of switching on a light to illustrate this cycle.
+Imagine you are sitting reading as evening falls. You decide you need more light;
+that is you establish the goal to get more light. From there you form an intention
+to switch on the desk lamp, and you specify the actions required, to reach over and
+press the lamp switch. If someone else is closer the intention may be different – you
+may ask them to switch on the light for you. Your goal is the same but the intention
+and actions are different. When you have executed the action you perceive the result,
+either the light is on or it isn’t and you interpret this, based on your knowledge of
+the world. For example, if the light does not come on you may interpret this as
+indicating the bulb has blown or the lamp is not plugged into the mains, and you will
+formulate new goals to deal with this. If the light does come on, you will evaluate
+the new state according to the original goals – is there now enough light? If so, the
+cycle is complete. If not, you may formulate a new intention to switch on the main
+ceiling light as well.<br>
+Norman uses this model of interaction to demonstrate why some interfaces cause
+problems to their users. He describes these in terms of the gulfs of execution and the
+gulfs of evaluation. As we noted earlier, the user and the system do not use the same
+terms to describe the domain and goals – remember that we called the language
+of the system the core language and the language of the user the task language. The
+gulf of execution is the difference between the user’s formulation of the actions to
+reach the goal and the actions allowed by the system. If the actions allowed by the
+system correspond to those intended by the user, the interaction will be effective.
+The interface should therefore aim to reduce this gulf.<br>
+The gulf of evaluation is the distance between the physical presentation of the
+system state and the expectation of the user. If the user can readily evaluate the
+presentation in terms of his goal, the gulf of evaluation is small. The more effort
+that is required on the part of the user to interpret the presentation, the less effective
+the interaction.<br>
+<p style="background-color: rgb(236, 183, 192);">
+Norman’s model is a useful means of understanding the interaction, in a way that
+is clear and intuitive. It allows other, more detailed, empirical and analytic work
+to be placed within a common framework. However, it only considers the system as
+far as the interface. It concentrates wholly on the user’s view of the interaction.
+It does not attempt to deal with the system’s communication through the interface.
+An extension of Norman’s model, proposed by Abowd and Beale, addresses this
+problem .</p><br>
+</p>
+<hr>
+</section>
 
-  </main>
+    <section>
+      <center><u><h2>Clean Comparison (Class &amp; Exam Reference)</h2></u></center>
 
-  <!-- Footer -->
-  <footer>
-    <p><a href="index.html">Back to Home</a></p>
+      <center><table style="background-color: rgb(180, 211, 221) ; border:1px solid black; font-size: 20px;">
+        <caption>
+          Model-based evaluation: what each model explains vs. predicts
+        </caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Model</th>
+            <th scope="col">Category</th>
+            <th scope="col">What it Explains</th>
+            <th scope="col">What it Predicts</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="row-norman">
+            <th scope="row">Norman</th>
+            <td>Cognitive / descriptive</td>
+            <td>Understanding, errors, feedback, gulfs</td>
+            <td>❌ Nothing (no performance prediction)</td>
+          </tr>
+
+          <tr class="row-goms">
+            <th scope="row">GOMS</th>
+            <td>Predictive / analytic</td>
+            <td>Task structure for expert users</td>
+            <td>✔ Relative efficiency</td>
+          </tr>
+
+          <tr class="row-klm">
+            <th scope="row">KLM</th>
+            <td>Predictive / quantitative</td>
+            <td>Low-level physical and motor actions</td>
+            <td>✔ Execution time</td>
+          </tr>
+        </tbody>
+      </table>
+      </center>
+      <br><br>
+    </section>
+</main>
+<footer>
+   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+   🏠&nbsp;<a href="file:///D:/Jaisha/5sem/lab01/index.html">Back to Home</a>
   </footer>
-
 </body>
 </html>

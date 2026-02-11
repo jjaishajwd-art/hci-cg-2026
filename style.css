@@ -1,0 +1,21 @@
+.background{
+    background-color: rgb(179, 178, 178);
+}
+
+.navbar{
+    background-color: black;
+}
+
+.navbar ul{
+    list-style: none;   
+}
+
+.navbar li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.navbar li a:hover{
+    color: rgb(212, 137, 212);
+}

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Questions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="background">
+    <header>
+        <nav class="navbar" aria-label="Primary navigation"> 
+        <ul>
+<li> <a href="index.html" target="_parent"> Home</a></li>
+         <li> <a href="cv.html" target="_parent"> CV</a></li>
+         <li> <a href="contact.html" target="_parent"> Contact</a></li>
+         <li> <a href="analysis.html" target="_parent"> Interaction Analysis</a></li>
+         <li> <a href="norman2klm.html" target="_parent" aria-current="page"> Norman-GOMS-KLM</a></li>
+         <li> <a href="file:///D:/Jaisha/5sem/index.html" target="_parent"> Lab 01 Rules</a></li>
+         <li ><a href="practiceQuestions.html" target="_blank">Practice Questions</a></li>
+         <li><a href="interestingInfo.html" target="_blank">Interesting Info</a></li>
+    </ul>
+</nav>
+    <h1>Lab Exam Practice (HTML Foundations)</h1>
+    <p style="font-size: 18px;">These practice questions are within Lab 01 scope. They focus on semantic HTML, navigation structure, accessibility basics, and tables.</p>
+    </header>
+
+    <main style="font-size: 17px;">
+        <section>
+<u><h2>Part A: Find Mistakes (Identify + Fix) - ADDITIONAL <span style="background-color: rgb(191, 230, 133); width: 25px; height: 25px; display:inline-block;"></span></h2></u>
+<p>In the exam, you will (1) identify the mistake in one sentence and (2) write the corrected HTML.</p>
+
+<table border="1">
+        <caption>Sample exam questions: fix common HTML structure and accessibility mistakes</caption>
+
+        <thead>
+          <tr>
+            <th scope="col">UI Element / Issue</th>
+            <th scope="col">Wrong HTML (with mistake)</th>
+            <th scope="col">Correct UI Element</th>
+            <th scope="col">Correct HTML</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+         <tr style="background-color: rgb(191, 230, 133);">
+            <th scope="row">Links with <code>non-descriptive</code> text</th>
+            <td>
+              <pre><code>&lt;a href="cv.html"&gt;Click here&lt;/a&gt;</code></pre>
+            </td>
+            <td>Links with descriptive text that tells users where the link goes (e.g., “View my CV”).</td>
+            <td>
+              <pre><code>&lt;a href="cv.html"&gt;View my CV&lt;/a&gt;</code></pre>
+            </td>
+          </tr>
+
+          <tr style="background-color: rgb(191, 230, 133);">
+            <th scope="row">Buttons using <code>&lt;div&gt;</code></th>
+            <td>
+              <pre><code>&lt;div class="btn"&gt;Send&lt;/div&gt;</code></pre>
+            </td>
+            <td>Use &lt;button&gt; element instead of non-semantic containers for interactive actions.</td>
+            <td>
+              <pre><code>&lt;button type="submit"&gt;Send&lt;/button&gt;</code></pre>
+            </td>
+          </tr>
+
+           <tr style="background-color: rgb(191, 230, 133);">
+            <th scope="row">Missing <code>aria-label</code> for landmarks</th>
+            <td>
+              <pre><code>&lt;nav&gt;
+  &lt;!-- links --&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+            <td>Landmark element (e.g., &lt;nav&gt;) with aria-label or aria-labelledby to describe its purpose.</td>
+            <td>
+              <pre><code>&lt;nav aria-label="Main navigation"&gt;
+  &lt;!-- links --&gt;
+&lt;/nav&gt;</code></pre>
+
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">Navigation menu has a link directly inside <code>ul</code> (missing <code>li</code>)</th>
+            <td>
+              <pre><code>&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;a href="index.html"&gt;Home&lt;/a&gt;
+    &lt;li&gt;&lt;a href="cv.html"&gt;CV&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+            <td>Navigation list where each link is inside a list item.</td>
+            <td>
+              <pre><code>&lt;nav aria-label="Primary navigation"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="cv.html"&gt;CV&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">Form label is not associated with its control (<code>for</code> ≠ <code>id</code>)</th>
+            <td>
+              <pre><code>&lt;label for="msg"&gt;Message&lt;/label&gt;
+&lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;</code></pre>
+            </td>
+            <td>Label correctly connected to form control.</td>
+            <td>
+              <pre><code>&lt;label for="message"&gt;Message&lt;/label&gt;
+&lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;</code></pre>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">Heading hierarchy is incorrect (skips a level)</th>
+            <td>
+              <pre><code>&lt;h1&gt;Interaction Analysis&lt;/h1&gt;
+&lt;h3&gt;Norman vs GOMS&lt;/h3&gt;</code></pre>
+            </td>
+            <td>Headings follow proper hierarchy (no skipping levels).</td>
+            <td>
+              <pre><code>&lt;h1&gt;Interaction Analysis&lt;/h1&gt;
+&lt;h2&gt;Norman vs GOMS&lt;/h2&gt;</code></pre>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">Comparison table missing <code>caption</code> and header cells (<code>th</code>)</th>
+            <td>
+              <pre><code>&lt;table&gt;
+  &lt;tr&gt;&lt;td&gt;Model&lt;/td&gt;&lt;td&gt;Predicts&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;KLM&lt;/td&gt;&lt;td&gt;Time&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </td>
+            <td>Accessible table with caption + headers + scope.</td>
+            <td>
+              <pre><code>&lt;table&gt;
+  &lt;caption&gt;Models and what they predict&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Model&lt;/th&gt;
+      &lt;th scope="col"&gt;Predicts&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;KLM&lt;/th&gt;
+      &lt;td&gt;Execution time&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row"><code>aria-current</code> used incorrectly (more than one “current page”)</th>
+            <td>
+              <pre><code>&lt;nav aria-label="Primary navigation"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html" aria-current="page"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="cv.html" aria-current="page"&gt;CV&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+            <td>Only the active page link is marked as current.</td>
+            <td>
+              <pre><code>&lt;nav aria-label="Primary navigation"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="cv.html" aria-current="page"&gt;CV&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+          </tr>
+
+<tr  style="background-color: rgb(191, 230, 133);">
+            <th scope="row">Form input without <code>name</code> attribute</th>
+            <td>
+              <pre><code>&lt;label for="email"&gt;Email&lt;/label&gt;
+&lt;input type="email" id="email"&gt;</code></pre>
+            </td>
+            <td>Input field with a name attribute so data can be submitted.</td>
+            <td>
+              <pre><code>&lt;label for="email"&gt;Email&lt;/label&gt;
+&lt;input type="email" id="email" name="email"&gt;</code></pre>
+            </td>
+          </tr>
+
+
+<tr style="background-color: rgb(191, 230, 133);">
+            <th scope="row">Image missing <code>alt</code> text</th>
+            <td>
+              <pre><code>&lt;img src="logo.png"&gt;</code></pre>
+            </td>
+            <td>Image element with a meaningful alt text describing the image.</td>
+            <td>
+              <pre><code>&lt;img src="logo.png" alt="Company Logo"&gt;</code></pre>
+            </td>
+          </tr>
+
+<tr style="background-color: rgb(191, 230, 133);">
+            <th scope="row">Form without <code>fieldset/legend</code></th>
+            <td>
+              <pre><code>&lt;label for="male"&gt;Male&lt;/label&gt
+&lt;input type="radio" id="male" name="gender"&gt;
+&lt;label for="female"&gt;Female&lt;/label&gt;
+&lt;input type="radio" id="female" name="gender"&gt;</code></pre>
+            </td>
+            <td>A fieldset with a legend grouping related inputs (e.g., radio buttons).</td>
+            <td>
+              <pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Gender&lt;/legend&gt;
+  &lt;label for="male"&gt;Male&lt;/label&gt;
+  &lt;input type="radio" id="male" name="gender"&gt;
+  &lt;label for="female"&gt;Female&lt;/label&gt;
+  &lt;input type="radio" id="female" name="gender"&gt;
+&lt;/fieldset&gt;</code></pre>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+<hr>
+</section>
+
+<section>
+<u><h2>Part B: True / False</h2></u>
+      <ul>
+        <li><strong><mark>T</mark>/F:</strong> Every link inside <code>&lt;ul&gt;</code> must be placed inside an <code>&lt;li&gt;</code>.</li>
+        <li><strong>T/<mark>F</mark></strong> A page may have multiple <code>&lt;h1&gt;</code> headings to make text larger.</li>
+        <li><strong><mark>T</mark>/F:</strong> <code>aria-current="page"</code> should be used on the active navigation item.</li>
+        <li><strong>T/<mark>F</mark></strong> A form is accessible even if it has no <code>&lt;label&gt;</code> elements.</li>
+        <li><strong><mark>T</mark>/F:</strong> KLM predicts execution time for expert, error-free performance.</li>
+      </ul>
+<hr>
+</section>
+
+<section style="font: 18px;">
+<u><h2>Part C: Short Answer</h2></u>
+      <ul>
+        <li>Explain the difference between a semantic element (e.g., <code>nav</code>) and a generic element (e.g., <code>div</code>).
+        <p style="background-color: pink;">Both look similar visually, but <code>&lt;nav&gt;</code> tells assistive tech: “This is a navigation region.”
+            Conveys meaning/purpose of content to browsers, developers, and assistive tech.
+            Helps screen readers and search engines understand structure.Improves readability and maintainability of code.
+    <br>
+        <code>&lt;div&gt;</code> is just a container; screen readers won’t know its purpose without extra ARIA attributes.
+    Has no inherent meaning; just a container for styling or layout.Screen readers treat it as just a block of content, Styled only visually; meaning must be inferred by developer 
+    and does not indicate content purpose.    
+    </p>
+        </li>
+        <li>Why does KLM not model high-level planning and interpretation?
+            <p>
+            <h3>Keystroke-Level Model (KLM)</h3>
+  <p style="background-color: pink;">KLM (Keystroke-Level Model) focuses only on low-level, observable actions of expert users. It predicts execution time based on keystrokes, clicks, and pointing movements and It ignores cognitive tasks like thinking, planning, or problem-solving, because these are highly variable and hard to measure consistently.
+  <br>In other words, KLM assumes the user already knows what to do, so it’s about speed of doing, not deciding.</p>
+  <i><h4>Example: Filling a form</h4></i>
+  <p>User has to fill a form:</p>
+  <ul>
+    <li><strong>KLM measures:</strong> typing each letter, pressing tab, clicking submit.</li>
+    <li><strong>KLM ignores:</strong> figuring out which field to fill first, or reading instructions carefully.</li>
+  </ul>
+            </p>
+        </li>
+      </ul>
+</section>
+</main>
+
+    <footer>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+   🏠&nbsp;<a href="file:///D:/Jaisha/5sem/lab01/index.html">Back to Home</a></p>
+    </footer>
+</body>
+</html>

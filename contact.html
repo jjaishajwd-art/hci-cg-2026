@@ -6,16 +6,13 @@
 
   <!-- Page title shown in browser tab and announced by screen readers -->
   <title>Don Norman – Contact</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="background">
 
   <!-- Page header: identifies the page purpose -->
   <header>
-    <h1>Contact</h1>
-  </header>
-
-  <!-- Primary navigation: identical structure across all pages -->
-  <nav aria-label="Primary navigation">
+<nav aria-label="Primary navigation" class="navbar">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="cv.html">CV</a></li>
@@ -26,28 +23,49 @@
       <li><a href="analysis.html">Interaction Analysis</a></li>
       <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
       <li><a href="assignment01.html">Lab 01 Rules</a></li>
+      <li><a href="practiceQuestions.html" target="_blank">Practice Questions</a></li>
+      <li><a href="interestingInfo.html" target="_blank">Interesting Info</a></li>
 
     </ul>
   </nav>
+  </header>
 
   <!-- Main landmark: primary content of this page -->
   <main>
-    <form action="#" method="post">
+    <center><u><h1>Contact Info<h1></u></center>
+    <form style="font-size: 18px;" action="#" method="post">
       
       <!-- Groups related form controls and provides context -->
       <fieldset>
         <legend>Send a Message</legend>
 
         <!-- Label explicitly associated with its input -->
-        <label for="subject">Subject</label><br>
-        <input type="text" id="subject" name="subject"><br><br>
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your full name"required><br><br>
 
-        <!-- Textarea with clear label for screen readers -->
-        <label for="message">Message</label><br>
-        <textarea id="message" name="message" rows="5" cols="30"></textarea><br><br>
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter your Email Address"required><br><br>
 
+        <label for="category">Category</label><br>
+        <select>
+                    <option>Select your Reason</option>
+                    <option value="Question">Question</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="Bug report">Bug Report</option>
+            </select><br><br>
+
+            <label for="message">Massage</label><br>
+            <textarea rows="5" cols="30" placeholder="Type your message here"></textarea><br><br>
+        <input type="checkbox" name="agreement"/> I agree to terms & privacy policy.
         <!-- Submit button is keyboard accessible by default -->
-        <button type="submit">Send</button>
+         <br>
+         <br>
+        <button style="background-color: rgb(37, 131, 219);" class="button" type="submit">Submit</button>
+         &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+         &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+         &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+         <button style="background-color: rgb(192, 14, 14);" class="button" type="reset">Reset</button>
+
       </fieldset>
 
     </form>
@@ -55,7 +73,8 @@
 
   <!-- Footer provides supplementary information -->
   <footer>
-    <p>Keyboard accessible form with screen-reader friendly labels.</p>
+    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+     &ensp;Keyboard accessible form with screen-reader friendly labels.</p>
   </footer>
 
 </body>
